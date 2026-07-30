@@ -15,6 +15,23 @@ const ASSETS = {
     "https://www.prna.com.au/hosted/org/333/imgs/104079.png",
   ],
   flags: "https://www.prna.com.au/hosted/org/333/imgs/104081.png",
+  social: [
+    {
+      name: "Facebook",
+      icon: "https://www.prna.com.au/hosted/org/333/imgs/104095.jpg",
+      url: "https://www.facebook.com/prna.netball",
+    },
+    {
+      name: "Instagram",
+      icon: "https://www.prna.com.au/hosted/org/333/imgs/104094.jpg",
+      url: "https://www.instagram.com/pineriversnetballassoc",
+    },
+    {
+      name: "TikTok",
+      icon: "https://www.prna.com.au/hosted/org/333/imgs/104093.jpg",
+      url: "https://www.tiktok.com/@pineriversofficial1",
+    },
+  ],
 };
 
 type Details = {
@@ -29,7 +46,7 @@ const initialDetails: Details = {
   name: "Alex Morgan",
   title: "Community Programs Coordinator",
   email: "alex.morgan@prna.com.au",
-  phone: "07 3205 0555",
+  phone: "07 3881 1107",
   address: "PO Box 332 Strathpine, Qld, 4500",
 };
 
@@ -73,6 +90,11 @@ function signatureMarkup(details: Details) {
     <td style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;"></td>
     <td style="vertical-align:middle;"><p style="margin:0;font-size:11px;line-height:1.4;color:#555555;max-width:300px;">We acknowledge the Traditional Custodians of the land on which we live, work and play. We pay our respects to Elders, past, present and emerging.</p></td>
   </tr></table></td></tr>
+  <tr><td style="padding-top:10px;">
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
+      ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:8px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
+    </tr></table>
+  </td></tr>
 </table>`;
 }
 
@@ -201,7 +223,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer><span>PRNA Signature Builder</span><span>Official branding, every time.</span></footer>
+      <footer>
+        <a href="https://www.lukehockeydigital.com.au/" target="_blank" rel="noreferrer">Built by lhdigi</a>
+      </footer>
     </main>
   );
 }

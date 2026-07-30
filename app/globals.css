@@ -95,8 +95,9 @@ input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(36,143,73,.
 .guide-card li { display: flex; align-items: center; gap: 14px; padding: 12px 0; color: #46554d; font-size: 13px; }
 .guide-card li b { flex: 0 0 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: var(--green); background: #e8f4ea; font-size: 11px; }
 .tip { background: #f6f8ef; border-left: 3px solid var(--lime); padding: 10px 12px; margin: 3px 0 0; color: #677168; font-size: 11px; line-height: 1.5; }
-footer { min-height: 70px; padding: 0 clamp(22px, 6vw, 90px); display: flex; justify-content: space-between; align-items: center; background: var(--green-dark); color: #aebdb4; font-size: 11px; letter-spacing: .05em; }
-footer span:first-child { color: white; font-weight: 800; }
+footer { min-height: 70px; padding: 0 clamp(22px, 6vw, 90px); display: flex; justify-content: center; align-items: center; background: var(--green-dark); font-size: 11px; letter-spacing: .05em; }
+footer a { color: white; font-weight: 700; text-decoration: none; }
+footer a:hover { color: var(--lime); text-decoration: underline; text-underline-offset: 4px; }
 
 @media (max-width: 900px) {
   .hero { display: block; padding-bottom: 52px; }
@@ -120,7 +121,7 @@ footer span:first-child { color: white; font-weight: 800; }
   .actions button { width: 100%; }
   .guide { padding: 65px 20px; }
   .guide-card { padding-left: 18px; padding-right: 18px; }
-  footer { flex-direction: column; justify-content: center; gap: 7px; }
+  footer { justify-content: center; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
