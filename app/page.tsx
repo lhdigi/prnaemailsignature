@@ -4,6 +4,9 @@ import { useMemo, useRef, useState } from "react";
 
 const ASSETS = {
   logo: "https://www.prna.com.au/hosted/org/333/imgs/104076.png",
+  christmasLogo: "https://www.prna.com.au/hosted/org/333/imgs/104096.png",
+  christmasLights: "https://www.prna.com.au/hosted/org/333/imgs/104097.png",
+  christmasBanner: "https://www.prna.com.au/hosted/org/333/imgs/104098.jpg",
   address: "https://www.prna.com.au/hosted/org/333/imgs/104086.png",
   phone: "https://www.prna.com.au/hosted/org/333/imgs/104083.png",
   email: "https://www.prna.com.au/hosted/org/333/imgs/104084.png",
@@ -58,7 +61,7 @@ function escapeHtml(value: string) {
     .replaceAll('"', "&quot;");
 }
 
-function signatureMarkup(details: Details) {
+function signatureMarkup(details: Details, template: "standard" | "christmas") {
   const d = Object.fromEntries(
     Object.entries(details).map(([key, value]) => [key, escapeHtml(value.trim())]),
   ) as Details;
@@ -70,9 +73,11 @@ function signatureMarkup(details: Details) {
       <td style="vertical-align:middle;">
         <p style="margin:0 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
         <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:2px;width:260px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+        ${template === "christmas"
+          ? `<img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;">`
+          : `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:2px;width:260px;font-size:0;line-height:0;">&nbsp;</td></tr></table>`}
       </td>
-      <td width="110" style="vertical-align:top;text-align:right;"><img src="${ASSETS.logo}" width="100" height="100" alt="PRNA Logo" style="display:block;border:0;margin-left:auto;"></td>
+      <td width="110" style="vertical-align:top;text-align:right;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="100" height="100" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;margin-left:auto;"></td>
     </tr></table>
   </td></tr>
   <tr><td style="padding-bottom:8px;">
@@ -86,6 +91,7 @@ function signatureMarkup(details: Details) {
   <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
     ${ASSETS.values.map((src, index) => `<td style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="65" height="65" alt="PRNA core value" style="display:block;border:0;"></td>`).join("")}
   </tr></table></td></tr>
+  ${template === "christmas" ? `<tr><td style="padding-bottom:10px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
   <tr><td style="padding-top:8px;border-top:1px solid #dddddd;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
     <td style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;"></td>
     <td style="vertical-align:middle;"><p style="margin:0;font-size:11px;line-height:1.4;color:#555555;max-width:300px;">We acknowledge the Traditional Custodians of the land on which we live, work and play. We pay our respects to Elders, past, present and emerging.</p></td>
@@ -100,10 +106,11 @@ function signatureMarkup(details: Details) {
 
 export default function Home() {
   const [details, setDetails] = useState(initialDetails);
+  const [template, setTemplate] = useState<"standard" | "christmas">("standard");
   const [status, setStatus] = useState("Ready to copy");
   const [guide, setGuide] = useState<"web" | "desktop" | "mobile">("web");
   const previewRef = useRef<HTMLDivElement>(null);
-  const html = useMemo(() => signatureMarkup(details), [details]);
+  const html = useMemo(() => signatureMarkup(details, template), [details, template]);
 
   function update(field: keyof Details, value: string) {
     setDetails((current) => ({ ...current, [field]: value }));
@@ -177,6 +184,19 @@ export default function Home() {
       <section className="workspace">
         <form className="editor" onSubmit={(event) => event.preventDefault()}>
           <div className="section-heading"><span>01</span><div><h2>Your details</h2><p>Everything updates as you type.</p></div></div>
+          <fieldset className="template-picker">
+            <legend>Signature style</legend>
+            <div>
+              <button type="button" className={template === "standard" ? "active" : ""} aria-pressed={template === "standard"} onClick={() => { setTemplate("standard"); setStatus("Ready to copy"); }}>
+                <span className="style-swatch standard-swatch" />
+                <span><b>Standard</b><small>Official PRNA signature</small></span>
+              </button>
+              <button type="button" className={template === "christmas" ? "active" : ""} aria-pressed={template === "christmas"} onClick={() => { setTemplate("christmas"); setStatus("Ready to copy"); }}>
+                <span className="style-swatch christmas-swatch">✦</span>
+                <span><b>Christmas</b><small>Festive seasonal signature</small></span>
+              </button>
+            </div>
+          </fieldset>
           <label>Full name<input value={details.name} onChange={(e) => update("name", e.target.value)} placeholder="e.g. Taylor Nguyen" autoComplete="name" /></label>
           <label>Job title<input value={details.title} onChange={(e) => update("title", e.target.value)} placeholder="e.g. Community Support Officer" autoComplete="organization-title" /></label>
           <label>Email address<input type="email" value={details.email} onChange={(e) => update("email", e.target.value)} placeholder="name@prna.com.au" autoComplete="email" /></label>

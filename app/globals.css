@@ -58,6 +58,20 @@ h1 em { color: var(--lime); font-weight: 400; }
 .section-heading h2 { font-family: Georgia, serif; font-size: 27px; font-weight: 500; margin: 0 0 4px; letter-spacing: -.02em; }
 .section-heading p { color: var(--muted); margin: 0; font-size: 12px; }
 label { display: block; margin-bottom: 18px; color: #35493f; text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 800; }
+.template-picker { border: 0; padding: 0; margin: 0 0 22px; }
+.template-picker legend { margin-bottom: 8px; color: #35493f; text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 800; }
+.template-picker > div { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.template-picker button {
+  min-height: 64px; padding: 9px 10px; display: flex; align-items: center; gap: 10px; text-align: left;
+  border: 1px solid #d5ddd7; border-radius: 3px; color: var(--ink); background: #fff;
+}
+.template-picker button.active { border-color: var(--green); box-shadow: 0 0 0 2px rgba(36,143,73,.1); background: #f8fcf8; }
+.template-picker button > span:last-child { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.template-picker button b { font-size: 12px; }
+.template-picker button small { color: var(--muted); font-size: 9px; white-space: nowrap; }
+.style-swatch { flex: 0 0 30px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; }
+.standard-swatch { background: linear-gradient(135deg, var(--green) 0 48%, var(--yellow) 48% 58%, #fff 58%); border: 1px solid #d5ddd7; }
+.christmas-swatch { background: #b62d2d; color: #fff; font-size: 15px; border: 3px solid #e9c86c; }
 input {
   display: block; width: 100%; height: 47px; margin-top: 8px; padding: 0 14px; border: 1px solid #d5ddd7;
   background: #fff; color: var(--ink); outline: none; border-radius: 2px; font-size: 14px; text-transform: none; letter-spacing: 0; font-weight: 400;
@@ -115,6 +129,7 @@ footer a:hover { color: var(--lime); text-decoration: underline; text-underline-
   .step-row .line { width: 8px; }
   .editor, .preview-panel { padding: 35px 20px; }
   .field-pair { grid-template-columns: 1fr; gap: 0; }
+  .template-picker > div { grid-template-columns: 1fr; }
   .email-body { padding: 20px 15px 24px; }
   .signature-preview { transform-origin: top left; }
   .actions { flex-direction: column; }
