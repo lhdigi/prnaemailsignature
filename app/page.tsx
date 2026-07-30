@@ -6,7 +6,7 @@ const ASSETS = {
   logo: "https://www.prna.com.au/hosted/org/333/imgs/104076.png",
   christmasLogo: "https://www.prna.com.au/hosted/org/333/imgs/104096.png",
   christmasLights: "https://www.prna.com.au/hosted/org/333/imgs/104097.png",
-  christmasBanner: "https://www.prna.com.au/hosted/org/333/imgs/104098.jpg",
+  christmasBanner: "https://www.prna.com.au/hosted/org/333/imgs/104099.jpg",
   address: "https://www.prna.com.au/hosted/org/333/imgs/104086.png",
   phone: "https://www.prna.com.au/hosted/org/333/imgs/104083.png",
   email: "https://www.prna.com.au/hosted/org/333/imgs/104084.png",
