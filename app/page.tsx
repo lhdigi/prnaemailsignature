@@ -4,9 +4,10 @@ import { useMemo, useRef, useState } from "react";
 
 const ASSETS = {
   logo: "https://www.prna.com.au/hosted/org/333/imgs/104076.png",
-  christmasLogo: "https://www.prna.com.au/hosted/org/333/imgs/104096.png",
+  christmasLogo: "https://www.prna.com.au/hosted/org/333/imgs/104111.png",
   christmasLights: "https://www.prna.com.au/hosted/org/333/imgs/104097.png",
   christmasBanner: "https://www.prna.com.au/hosted/org/333/imgs/104099.jpg",
+  sponsorBanner: "https://www.prna.com.au/hosted/org/333/imgs/104112.jpg",
   address: "https://www.prna.com.au/hosted/org/333/imgs/104086.png",
   phone: "https://www.prna.com.au/hosted/org/333/imgs/104083.png",
   email: "https://www.prna.com.au/hosted/org/333/imgs/104084.png",
@@ -69,7 +70,7 @@ function signatureMarkup(details: Details, template: "standard" | "christmas") {
 
   return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;width:480px;max-width:100%;">
   <tr><td style="padding-bottom:8px;">
-    <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%"><tr>
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="420" style="width:420px;max-width:100%;"><tr>
       <td style="vertical-align:middle;">
         <p style="margin:0 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
         <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
@@ -91,16 +92,19 @@ function signatureMarkup(details: Details, template: "standard" | "christmas") {
   <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
     ${ASSETS.values.map((src, index) => `<td style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="65" height="65" alt="PRNA core value" style="display:block;border:0;"></td>`).join("")}
   </tr></table></td></tr>
-  ${template === "christmas" ? `<tr><td style="padding-bottom:10px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
-  <tr><td style="padding-top:8px;border-top:1px solid #dddddd;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    <td style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;"></td>
-    <td style="vertical-align:middle;"><p style="margin:0;font-size:11px;line-height:1.4;color:#555555;max-width:300px;">We acknowledge the Traditional Custodians of the land on which we live, work and play. We pay our respects to Elders, past, present and emerging.</p></td>
-  </tr></table></td></tr>
-  <tr><td style="padding-top:10px;">
+  <tr><td style="padding:0 0 12px 4px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
       ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:8px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
     </tr></table>
   </td></tr>
+  ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
+  <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
+  <tr><td style="padding:0 0 14px 0;"><img src="${ASSETS.sponsorBanner}" width="440" height="98" alt="Proudly sponsored by Village Motors" style="display:block;border:0;max-width:100%;"></td></tr>
+  <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
+  <tr><td><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
+    <td style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;"></td>
+    <td style="vertical-align:middle;"><p style="margin:0;font-size:11px;line-height:1.4;color:#555555;max-width:300px;">We acknowledge the Traditional Custodians of the land on which we live, work and play. We pay our respects to Elders, past, present and emerging.</p></td>
+  </tr></table></td></tr>
 </table>`;
 }
 
