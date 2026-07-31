@@ -86,7 +86,7 @@ function signatureMarkup(details: Details, template: "standard" | "christmas") {
           <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;font-size:13px;">www.prna.com.au</a></td></tr></table></td></tr>
         </table>
       </td>
-      <td width="130" style="vertical-align:top;text-align:center;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;margin:0 auto;"></td>
+      <td width="130" style="vertical-align:top;text-align:center;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;${template === "christmas" ? "margin:-20px auto 0;" : "margin:0 auto;"}"></td>
     </tr></table>
   </td></tr>
   <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
