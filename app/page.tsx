@@ -99,7 +99,7 @@ function signatureMarkup(details: Details, template: "standard" | "christmas") {
   </td></tr>
   ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
-  <tr><td align="center" style="padding:0 0 14px 0;text-align:center;"><img src="${ASSETS.sponsorBanner}" width="360" height="80" alt="Proudly sponsored by Village Motors" style="display:block;border:0;max-width:100%;margin:0 auto;"></td></tr>
+  <tr><td align="left" style="padding:0 0 14px 0;text-align:left;"><img src="${ASSETS.sponsorBanner}" width="320" height="71" alt="Proudly sponsored by Village Motors" style="display:block;border:0;max-width:100%;"></td></tr>
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
   <tr><td><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
     <td style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;"></td>
