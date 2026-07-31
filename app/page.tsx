@@ -69,34 +69,34 @@ function signatureMarkup(details: Details, template: "standard" | "christmas") {
   const phoneHref = details.phone.replace(/[^\d+]/g, "");
 
   return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;width:480px;max-width:100%;">
+  <tr><td style="padding-bottom:14px;">
+    <p style="margin:0 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
+    <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
+    ${template === "christmas"
+      ? `<img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;">`
+      : `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:2px;width:260px;font-size:0;line-height:0;">&nbsp;</td></tr></table>`}
+  </td></tr>
   <tr><td style="padding-bottom:8px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="420" style="width:420px;max-width:100%;"><tr>
-      <td style="vertical-align:middle;">
-        <p style="margin:0 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
-        <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
-        ${template === "christmas"
-          ? `<img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;">`
-          : `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:2px;width:260px;font-size:0;line-height:0;">&nbsp;</td></tr></table>`}
+      <td width="290" style="vertical-align:top;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.address}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><span style="color:#333333;font-size:13px;">${d.address || "Address"}</span></td></tr></table></td></tr>
+          <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.phone}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="tel:${phoneHref}" style="color:#333333;text-decoration:none;font-size:13px;">${d.phone || "Phone number"}</a></td></tr></table></td></tr>
+          <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.email}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="mailto:${d.email}" style="color:#333333;text-decoration:none;font-size:13px;">${d.email || "Email address"}</a></td></tr></table></td></tr>
+          <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;font-size:13px;">www.prna.com.au</a></td></tr></table></td></tr>
+        </table>
       </td>
-      <td width="${template === "christmas" ? "130" : "110"}" style="vertical-align:top;text-align:right;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;margin-left:auto;${template === "christmas" ? "margin-top:-10px;" : ""}"></td>
+      <td width="130" style="vertical-align:top;text-align:center;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;margin:0 auto;"></td>
     </tr></table>
   </td></tr>
-  <tr><td style="padding-bottom:8px;">
-    <table cellpadding="0" cellspacing="0" border="0" role="presentation">
-      <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.address}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><span style="color:#333333;font-size:13px;">${d.address || "Address"}</span></td></tr></table></td></tr>
-      <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.phone}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="tel:${phoneHref}" style="color:#333333;text-decoration:none;font-size:13px;">${d.phone || "Phone number"}</a></td></tr></table></td></tr>
-      <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.email}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="mailto:${d.email}" style="color:#333333;text-decoration:none;font-size:13px;">${d.email || "Email address"}</a></td></tr></table></td></tr>
-      <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;font-size:13px;">www.prna.com.au</a></td></tr></table></td></tr>
-    </table>
-  </td></tr>
+  <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
+    ${ASSETS.values.map((src, index) => `<td style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="58" height="58" alt="PRNA core value" style="display:block;border:0;"></td>`).join("")}
+  </tr></table></td></tr>
   <tr><td style="padding:0 0 12px 4px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
       ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:8px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
     </tr></table>
   </td></tr>
-  <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    ${ASSETS.values.map((src, index) => `<td style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="65" height="65" alt="PRNA core value" style="display:block;border:0;"></td>`).join("")}
-  </tr></table></td></tr>
   ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
   <tr><td align="left" style="padding:0 0 14px 0;text-align:left;"><img src="${ASSETS.sponsorBanner}" width="320" height="71" alt="Proudly sponsored by Village Motors" style="display:block;border:0;max-width:100%;"></td></tr>
