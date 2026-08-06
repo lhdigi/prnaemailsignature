@@ -102,7 +102,7 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   const testTop = `<tr><td style="padding-bottom:14px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="470" style="width:470px;max-width:100%;"><tr>
       <td width="145" style="vertical-align:top;padding-right:15px;">
-        <img src="${ASSETS.logo}" width="125" height="125" alt="PRNA Logo" style="display:block;border:0;margin:0 0 8px 0;">
+        <img src="${ASSETS.logo}" width="110" height="110" alt="PRNA Logo" style="display:block;border:0;margin:0 0 8px 4px;">
         <table cellpadding="0" cellspacing="0" border="0" role="presentation">
           <tr>
             <td style="padding:0 6px 6px 0;"><img src="${ASSETS.values[3]}" width="56" height="56" alt="Resilience" style="display:block;border:0;"></td>
@@ -113,15 +113,15 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
             <td><img src="${ASSETS.values[0]}" width="56" height="56" alt="Commitment" style="display:block;border:0;"></td>
           </tr>
         </table>
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:10px;"><tr>
-          ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:7px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
-        </tr></table>
       </td>
       <td width="310" style="vertical-align:top;">
-        <p style="margin:18px 0 2px 0;font-size:26px;line-height:30px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
-        <p style="margin:0 0 10px 0;font-size:13px;line-height:17px;font-weight:bold;color:#333333;letter-spacing:3px;text-transform:uppercase;">${d.title || "Job title"}</p>
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:3px;width:290px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:24px;"><tr><td>${contactRows}</td></tr></table>
+        <p style="margin:14px 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
+        <p style="margin:0 0 9px 0;font-size:11px;line-height:15px;font-weight:bold;color:#333333;letter-spacing:2.5px;text-transform:uppercase;">${d.title || "Job title"}</p>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:3px;width:270px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:20px;"><tr><td>${contactRows}</td></tr></table>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:8px 0 0 26px;"><tr>
+          ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:6px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="20" height="20" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
+        </tr></table>
       </td>
     </tr></table>
   </td></tr>`;
