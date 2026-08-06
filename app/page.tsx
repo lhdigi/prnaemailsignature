@@ -119,7 +119,7 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
         <p style="margin:0 0 9px 0;font-size:11px;line-height:15px;font-weight:bold;color:#333333;letter-spacing:2.5px;text-transform:uppercase;">${d.title || "Job title"}</p>
         <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:3px;width:270px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
         <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:20px;"><tr><td>${contactRows}</td></tr></table>
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin:8px 0 0 26px;"><tr>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin-top:8px;"><tr>
           ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:6px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="20" height="20" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
         </tr></table>
       </td>
@@ -130,7 +130,7 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   ${template === "test" ? testTop : currentTop}
   ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
-  <tr><td align="left" style="padding:0 0 14px 0;text-align:left;"><img src="${ASSETS.sponsorBanner}" width="320" height="71" alt="Proudly sponsored by Village Motors" style="display:block;border:0;max-width:100%;"></td></tr>
+  <tr><td align="left" style="padding:0 0 14px 0;text-align:left;"><img src="${ASSETS.sponsorBanner}" width="280" height="63" alt="Proudly sponsored by Village Motors" style="display:block;border:0;max-width:100%;"></td></tr>
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
   <tr><td><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
     <td style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;"></td>
