@@ -121,7 +121,7 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   </table>`;
 
   const socialIcons = `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    ${ASSETS.social.map((item, index) => `<td width="${index < ASSETS.social.length - 1 ? "36" : "28"}" height="28" style="${index < ASSETS.social.length - 1 ? "padding-right:8px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;width:28px;height:28px;min-width:28px;max-width:28px;"></a></td>`).join("")}
+    ${ASSETS.social.map((item, index) => `<td width="${index < ASSETS.social.length - 1 ? "29" : "22"}" height="22" style="${index < ASSETS.social.length - 1 ? "padding-right:7px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="22" height="22" alt="${item.name}" style="display:block;border:0;width:22px;height:22px;min-width:22px;max-width:22px;"></a></td>`).join("")}
   </tr></table>`;
 
   const currentTop = `<tr><td style="padding-bottom:14px;">
@@ -133,14 +133,13 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   </td></tr>
   <tr><td style="padding-bottom:8px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="420" style="width:420px;max-width:100%;"><tr>
-      <td width="290" style="vertical-align:top;">${contactRows}</td>
+      <td width="290" style="vertical-align:top;">${contactRows}<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td height="7" style="height:7px;line-height:7px;font-size:0;">&nbsp;</td></tr></table>${socialIcons}</td>
       <td width="130" style="vertical-align:top;text-align:center;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;width:${template === "christmas" ? "120" : "100"}px;height:${template === "christmas" ? "120" : "100"}px;min-width:${template === "christmas" ? "120" : "100"}px;max-width:${template === "christmas" ? "120" : "100"}px;${template === "christmas" ? "margin:-20px auto 0;" : "margin:0 auto;"}"></td>
     </tr></table>
   </td></tr>
   <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
     ${ASSETS.values.map((src, index) => `<td width="${index < 3 ? "66" : "58"}" height="58" style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="58" height="58" alt="PRNA core value" style="display:block;border:0;width:58px;height:58px;min-width:58px;max-width:58px;"></td>`).join("")}
-  </tr></table></td></tr>
-  <tr><td style="padding:0 0 12px 4px;">${socialIcons}</td></tr>`;
+  </tr></table></td></tr>`;
 
   const testTop = `<tr><td style="padding-bottom:14px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="460" style="width:460px;max-width:100%;"><tr>
@@ -148,12 +147,12 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
         <img src="${TEST_ASSETS.logo}" width="100" height="100" alt="PRNA Logo" style="display:block;border:0;width:100px;height:100px;min-width:100px;max-width:100px;margin:0 0 10px 0;">
         <table cellpadding="0" cellspacing="0" border="0" role="presentation">
           <tr>
-            <td width="54" height="50" style="padding:0 4px 4px 0;"><img src="${TEST_ASSETS.values[0]}" width="50" height="50" alt="PRNA commitment value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
-            <td width="50" height="50" style="padding:0 0 4px 0;"><img src="${TEST_ASSETS.values[1]}" width="50" height="50" alt="PRNA respect value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
+            <td width="52" height="48" style="padding:0 4px 4px 0;"><img src="${TEST_ASSETS.values[0]}" width="48" height="48" alt="PRNA commitment value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
+            <td width="48" height="48" style="padding:0 0 4px 0;"><img src="${TEST_ASSETS.values[1]}" width="48" height="48" alt="PRNA respect value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
           </tr>
           <tr>
-            <td width="54" height="50" style="padding-right:4px;"><img src="${TEST_ASSETS.values[2]}" width="50" height="50" alt="PRNA inclusion value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
-            <td width="50" height="50"><img src="${TEST_ASSETS.values[3]}" width="50" height="50" alt="PRNA resilience value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
+            <td width="52" height="48" style="padding-right:4px;"><img src="${TEST_ASSETS.values[2]}" width="48" height="48" alt="PRNA inclusion value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
+            <td width="48" height="48"><img src="${TEST_ASSETS.values[3]}" width="48" height="48" alt="PRNA resilience value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
           </tr>
         </table>
       </td>
