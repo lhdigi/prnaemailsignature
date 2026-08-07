@@ -3,36 +3,36 @@
 import { useMemo, useRef, useState } from "react";
 
 const ASSETS = {
-  logo: "https://www.prna.com.au/hosted/org/333/imgs/104076.png",
-  christmasLogo: "https://www.prna.com.au/hosted/org/333/imgs/104111.png",
-  christmasLights: "https://www.prna.com.au/hosted/org/333/imgs/104097.png",
+  logo: "https://www.prna.com.au/hosted/org/333/imgs/104332.png",
+  christmasLogo: "https://www.prna.com.au/hosted/org/333/imgs/104335.png",
+  christmasLights: "https://www.prna.com.au/hosted/org/333/imgs/104320.png",
   christmasBanner: "https://www.prna.com.au/hosted/org/333/imgs/104099.jpg",
-  sponsorBanner: "https://www.prna.com.au/hosted/org/333/imgs/104112.jpg",
-  address: "https://www.prna.com.au/hosted/org/333/imgs/104086.png",
-  phone: "https://www.prna.com.au/hosted/org/333/imgs/104083.png",
-  email: "https://www.prna.com.au/hosted/org/333/imgs/104084.png",
-  website: "https://www.prna.com.au/hosted/org/333/imgs/104085.png",
+  sponsorBanner: "https://www.prna.com.au/hosted/org/333/imgs/104331.png",
+  address: "https://www.prna.com.au/hosted/org/333/imgs/104319.png",
+  phone: "https://www.prna.com.au/hosted/org/333/imgs/104327.png",
+  email: "https://www.prna.com.au/hosted/org/333/imgs/104321.png",
+  website: "https://www.prna.com.au/hosted/org/333/imgs/104334.png",
   values: [
-    "https://www.prna.com.au/hosted/org/333/imgs/104077.png",
-    "https://www.prna.com.au/hosted/org/333/imgs/104080.png",
-    "https://www.prna.com.au/hosted/org/333/imgs/104078.png",
-    "https://www.prna.com.au/hosted/org/333/imgs/104079.png",
+    "https://www.prna.com.au/hosted/org/333/imgs/104322.png",
+    "https://www.prna.com.au/hosted/org/333/imgs/104326.png",
+    "https://www.prna.com.au/hosted/org/333/imgs/104325.png",
+    "https://www.prna.com.au/hosted/org/333/imgs/104333.png",
   ],
-  flags: "https://www.prna.com.au/hosted/org/333/imgs/104081.png",
+  flags: "https://www.prna.com.au/hosted/org/333/imgs/104323.png",
   social: [
     {
       name: "Facebook",
-      icon: "https://www.prna.com.au/hosted/org/333/imgs/104095.jpg",
+      icon: "https://www.prna.com.au/hosted/org/333/imgs/104328.png",
       url: "https://www.facebook.com/prna.netball",
     },
     {
       name: "Instagram",
-      icon: "https://www.prna.com.au/hosted/org/333/imgs/104094.jpg",
+      icon: "https://www.prna.com.au/hosted/org/333/imgs/104329.png",
       url: "https://www.instagram.com/pineriversnetballassoc",
     },
     {
       name: "TikTok",
-      icon: "https://www.prna.com.au/hosted/org/333/imgs/104093.jpg",
+      icon: "https://www.prna.com.au/hosted/org/333/imgs/104330.png",
       url: "https://www.tiktok.com/@pineriversofficial1",
     },
   ],
@@ -107,10 +107,10 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   const phoneHref = details.phone.replace(/[^\d+]/g, "");
 
   const contactRows = `<table cellpadding="0" cellspacing="0" border="0" role="presentation">
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.address}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><span style="color:#333333;font-size:13px;">${d.address || "Address"}</span></td></tr></table></td></tr>
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.phone}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="tel:${phoneHref}" style="color:#333333;text-decoration:none;font-size:13px;">${d.phone || "Phone number"}</a></td></tr></table></td></tr>
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.email}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="mailto:${d.email}" style="color:#333333;text-decoration:none;font-size:13px;">${d.email || "Email address"}</a></td></tr></table></td></tr>
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;"></td><td style="vertical-align:middle;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;font-size:13px;">www.prna.com.au</a></td></tr></table></td></tr>
+    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.address}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><span style="color:#333333;font-size:13px;">${d.address || "Address"}</span></td></tr></table></td></tr>
+    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.phone}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><a href="tel:${phoneHref}" style="color:#333333;text-decoration:none;font-size:13px;">${d.phone || "Phone number"}</a></td></tr></table></td></tr>
+    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.email}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><a href="mailto:${d.email}" style="color:#333333;text-decoration:none;font-size:13px;">${d.email || "Email address"}</a></td></tr></table></td></tr>
+    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;font-size:13px;">www.prna.com.au</a></td></tr></table></td></tr>
   </table>`;
 
   const testContactRows = `<table cellpadding="0" cellspacing="0" border="0" role="presentation">
@@ -121,50 +121,59 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   </table>`;
 
   const socialIcons = `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    ${ASSETS.social.map((item, index) => `<td style="${index < ASSETS.social.length - 1 ? "padding-right:8px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;"></a></td>`).join("")}
+    ${ASSETS.social.map((item, index) => `<td width="${index < ASSETS.social.length - 1 ? "36" : "28"}" height="28" style="${index < ASSETS.social.length - 1 ? "padding-right:8px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="28" height="28" alt="${item.name}" style="display:block;border:0;width:28px;height:28px;min-width:28px;max-width:28px;"></a></td>`).join("")}
   </tr></table>`;
 
   const currentTop = `<tr><td style="padding-bottom:14px;">
     <p style="margin:0 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
     <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
     ${template === "christmas"
-      ? `<img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;">`
+      ? `<img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;width:260px;height:33px;min-width:260px;max-width:260px;">`
       : `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td style="background-color:#f9c126;height:2px;width:260px;font-size:0;line-height:0;">&nbsp;</td></tr></table>`}
   </td></tr>
   <tr><td style="padding-bottom:8px;">
     <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="420" style="width:420px;max-width:100%;"><tr>
       <td width="290" style="vertical-align:top;">${contactRows}</td>
-      <td width="130" style="vertical-align:top;text-align:center;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;${template === "christmas" ? "margin:-20px auto 0;" : "margin:0 auto;"}"></td>
+      <td width="130" style="vertical-align:top;text-align:center;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;width:${template === "christmas" ? "120" : "100"}px;height:${template === "christmas" ? "120" : "100"}px;min-width:${template === "christmas" ? "120" : "100"}px;max-width:${template === "christmas" ? "120" : "100"}px;${template === "christmas" ? "margin:-20px auto 0;" : "margin:0 auto;"}"></td>
     </tr></table>
   </td></tr>
   <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    ${ASSETS.values.map((src, index) => `<td style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="58" height="58" alt="PRNA core value" style="display:block;border:0;"></td>`).join("")}
+    ${ASSETS.values.map((src, index) => `<td width="${index < 3 ? "66" : "58"}" height="58" style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="58" height="58" alt="PRNA core value" style="display:block;border:0;width:58px;height:58px;min-width:58px;max-width:58px;"></td>`).join("")}
   </tr></table></td></tr>
   <tr><td style="padding:0 0 12px 4px;">${socialIcons}</td></tr>`;
 
   const testTop = `<tr><td style="padding-bottom:14px;">
-    <p style="margin:0 0 2px 0;font-size:22px;line-height:26px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
-    <p style="margin:0 0 6px 0;font-size:12px;line-height:16px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
-    <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="260" style="background-color:#f9c126;height:2px;width:260px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-  </td></tr>
-  <tr><td style="padding-bottom:8px;">
-    <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="420" style="width:420px;max-width:100%;"><tr>
-      <td width="290" style="vertical-align:top;">${testContactRows}</td>
-      <td width="130" style="vertical-align:top;text-align:center;"><img src="${TEST_ASSETS.logo}" width="100" height="100" alt="PRNA Logo" style="display:block;border:0;width:100px;height:100px;min-width:100px;max-width:100px;margin:0 auto;"></td>
-    </tr></table>
-  </td></tr>
-  <tr><td style="padding-bottom:8px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    ${TEST_ASSETS.values.map((src, index) => `<td width="${index < 3 ? "66" : "58"}" height="58" style="${index < 3 ? "padding-right:8px;" : ""}"><img src="${src}" width="58" height="58" alt="PRNA core value" style="display:block;border:0;width:58px;height:58px;min-width:58px;max-width:58px;"></td>`).join("")}
-  </tr></table></td></tr>
-  <tr><td style="padding:0 0 12px 4px;">
-    <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-      ${TEST_ASSETS.social.map((item, index) => `<td width="${index < TEST_ASSETS.social.length - 1 ? "26" : "20"}" height="20" style="${index < TEST_ASSETS.social.length - 1 ? "padding-right:6px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="20" height="20" alt="${item.name}" style="display:block;border:0;width:20px;height:20px;min-width:20px;max-width:20px;"></a></td>`).join("")}
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="460" style="width:460px;max-width:100%;"><tr>
+      <td width="132" style="width:132px;vertical-align:top;padding-right:18px;">
+        <img src="${TEST_ASSETS.logo}" width="100" height="100" alt="PRNA Logo" style="display:block;border:0;width:100px;height:100px;min-width:100px;max-width:100px;margin:0 0 10px 0;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+          <tr>
+            <td width="54" height="50" style="padding:0 4px 4px 0;"><img src="${TEST_ASSETS.values[0]}" width="50" height="50" alt="PRNA commitment value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
+            <td width="50" height="50" style="padding:0 0 4px 0;"><img src="${TEST_ASSETS.values[1]}" width="50" height="50" alt="PRNA respect value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
+          </tr>
+          <tr>
+            <td width="54" height="50" style="padding-right:4px;"><img src="${TEST_ASSETS.values[2]}" width="50" height="50" alt="PRNA inclusion value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
+            <td width="50" height="50"><img src="${TEST_ASSETS.values[3]}" width="50" height="50" alt="PRNA resilience value" style="display:block;border:0;width:50px;height:50px;min-width:50px;max-width:50px;"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="310" style="width:310px;vertical-align:top;">
+        <p style="margin:0 0 2px 0;font-size:20px;line-height:24px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
+        <p style="margin:0 0 6px 0;font-size:11px;line-height:15px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="290" style="background-color:#f9c126;height:2px;width:290px;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td height="14" style="height:14px;line-height:14px;font-size:0;">&nbsp;</td></tr></table>
+        ${testContactRows}
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td height="7" style="height:7px;line-height:7px;font-size:0;">&nbsp;</td></tr></table>
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
+          ${TEST_ASSETS.social.map((item, index) => `<td width="${index < TEST_ASSETS.social.length - 1 ? "26" : "20"}" height="20" style="${index < TEST_ASSETS.social.length - 1 ? "padding-right:6px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="20" height="20" alt="${item.name}" style="display:block;border:0;width:20px;height:20px;min-width:20px;max-width:20px;"></a></td>`).join("")}
+        </tr></table>
+      </td>
     </tr></table>
   </td></tr>`;
 
   return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;width:480px;max-width:100%;">
   ${template === "test" ? testTop : currentTop}
-  ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;max-width:100%;"></td></tr>` : ""}
+  ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;width:400px;height:50px;min-width:400px;max-width:400px;"></td></tr>` : ""}
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
   <tr><td align="left" style="padding:0 0 14px 0;text-align:left;"><img src="${template === "test" ? TEST_ASSETS.sponsorBanner : ASSETS.sponsorBanner}" width="280" height="63" alt="Proudly sponsored by Village Motors" style="display:block;border:0;width:280px;height:63px;min-width:280px;max-width:280px;"></td></tr>
   <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
@@ -226,9 +235,9 @@ export default function Home() {
   }
 
   const guides = {
-    web: ["Copy your signature above.", "In Outlook, open Settings → Account → Signatures.", "Create a new signature, paste, then save."],
-    desktop: ["Copy your signature above.", "Open Outlook Settings → Signatures.", "Add a new signature, paste it in, then save."],
-    mobile: ["Copy your signature above.", "In the Outlook app, open Settings → Signature.", "Remove the existing text, paste, then save."],
+    web: ["Delete the old signature and create a completely blank new one.", "Return to this website and click Copy signature — never copy it from an email.", "In Outlook, open Settings → Account → Signatures, paste once, then save.", "Send yourself a test email and check the received message before using it."],
+    desktop: ["Open Outlook Settings → Signatures and completely remove the old signature.", "Return to this website and click Copy signature — never copy it from an email.", "Create a blank signature in Outlook, paste once without editing or resizing, then save.", "Send yourself a test email and check the received message before using it."],
+    mobile: ["Open Outlook Settings → Signature and remove every part of the existing signature.", "Return to this website and click Copy signature — never copy it from an email.", "Paste once into the empty signature box without editing or resizing, then save.", "Send yourself a test email and check the received message on another device."],
   };
 
   return (
@@ -268,7 +277,7 @@ export default function Home() {
               </button>
               <button type="button" className={template === "test" ? "active" : ""} aria-pressed={template === "test"} onClick={() => { setTemplate("test"); setStatus("Ready to copy"); }}>
                 <span className="style-swatch test-swatch">T</span>
-                <span><b>Test layout</b><small>New correctly sized assets</small></span>
+                <span><b>Test layout</b><small>Logo and values on the left</small></span>
               </button>
             </div>
           </fieldset>
@@ -303,7 +312,7 @@ export default function Home() {
         <div>
           <p className="eyebrow">Almost there</p>
           <h2>Paste it into Outlook</h2>
-          <p>Choose where you use Outlook and follow three quick steps.</p>
+          <p>Choose where you use Outlook and follow these steps carefully.</p>
         </div>
         <div className="guide-card">
           <div className="tabs" role="tablist" aria-label="Outlook version">
@@ -314,7 +323,7 @@ export default function Home() {
             ))}
           </div>
           <ol>{guides[guide].map((step, index) => <li key={step}><b>{index + 1}</b><span>{step}</span></li>)}</ol>
-          <p className="tip">Tip: Send yourself a test email to check the result on desktop and mobile.</p>
+          <p className="tip"><strong>Important:</strong> Always copy directly from this website. Never copy a signature from an old or received email, as Outlook may carry broken formatting with it.</p>
         </div>
       </section>
 
