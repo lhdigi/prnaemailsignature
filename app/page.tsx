@@ -70,53 +70,49 @@ function signatureMarkup(details: Details, template: SignatureTemplate) {
   ) as Details;
   const phoneHref = details.phone.replace(/[^\d+]/g, "");
 
-  const contactRows = `<table cellpadding="0" cellspacing="0" border="0" role="presentation">
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.address}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><span style="color:#333333;font-size:13px;">${d.address || "Address"}</span></td></tr></table></td></tr>
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.phone}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><a href="tel:${phoneHref}" style="color:#333333;text-decoration:none;font-size:13px;">${d.phone || "Phone number"}</a></td></tr></table></td></tr>
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.email}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><a href="mailto:${d.email}" style="color:#333333;text-decoration:none;font-size:13px;">${d.email || "Email address"}</a></td></tr></table></td></tr>
-    <tr><td style="padding-bottom:5px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="26" style="vertical-align:middle;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;min-width:18px;max-width:18px;"></td><td style="vertical-align:middle;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;font-size:13px;">www.prna.com.au</a></td></tr></table></td></tr>
-  </table>`;
-
   const signatureTop = `<tr><td style="padding-bottom:14px;">
-    <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="460" style="width:460px;max-width:100%;"><tr>
-      <td width="132" style="width:132px;vertical-align:top;padding-right:18px;">
-        <img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;width:${template === "christmas" ? "120" : "100"}px;height:${template === "christmas" ? "120" : "100"}px;min-width:${template === "christmas" ? "120" : "100"}px;max-width:${template === "christmas" ? "120" : "100"}px;margin:0 0 10px 0;">
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="${template === "christmas" ? "margin-left:10px;" : ""}">
+    <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="440" style="width:440px;border-collapse:collapse;table-layout:fixed;"><tr>
+      <td width="138" style="width:138px;vertical-align:top;padding:0 18px 0 0;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="120" style="width:120px;border-collapse:collapse;">
+          <tr><td align="center" style="padding:0 0 10px 0;font-size:0;line-height:0;"><img src="${template === "christmas" ? ASSETS.christmasLogo : ASSETS.logo}" width="${template === "christmas" ? "120" : "100"}" height="${template === "christmas" ? "120" : "100"}" alt="${template === "christmas" ? "PRNA Christmas Logo" : "PRNA Logo"}" style="display:block;border:0;width:${template === "christmas" ? "120" : "100"}px;height:${template === "christmas" ? "120" : "100"}px;"></td></tr>
+          <tr><td align="center" style="padding:0;font-size:0;line-height:0;"><table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100" style="width:100px;border-collapse:collapse;table-layout:fixed;">
           <tr>
-            <td width="52" height="48" style="padding:0 4px 4px 0;"><img src="${ASSETS.values[0]}" width="48" height="48" alt="PRNA commitment value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
-            <td width="48" height="48" style="padding:0 0 4px 0;"><img src="${ASSETS.values[1]}" width="48" height="48" alt="PRNA respect value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
+            <td width="52" height="52" style="width:52px;height:52px;padding:0 4px 4px 0;font-size:0;line-height:0;"><img src="${ASSETS.values[0]}" width="48" height="48" alt="PRNA commitment value" style="display:block;border:0;width:48px;height:48px;"></td>
+            <td width="48" height="52" style="width:48px;height:52px;padding:0 0 4px 0;font-size:0;line-height:0;"><img src="${ASSETS.values[1]}" width="48" height="48" alt="PRNA respect value" style="display:block;border:0;width:48px;height:48px;"></td>
           </tr>
           <tr>
-            <td width="52" height="48" style="padding-right:4px;"><img src="${ASSETS.values[2]}" width="48" height="48" alt="PRNA inclusion value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
-            <td width="48" height="48"><img src="${ASSETS.values[3]}" width="48" height="48" alt="PRNA resilience value" style="display:block;border:0;width:48px;height:48px;min-width:48px;max-width:48px;"></td>
+            <td width="52" height="48" style="width:52px;height:48px;padding:0 4px 0 0;font-size:0;line-height:0;"><img src="${ASSETS.values[2]}" width="48" height="48" alt="PRNA inclusion value" style="display:block;border:0;width:48px;height:48px;"></td>
+            <td width="48" height="48" style="width:48px;height:48px;padding:0;font-size:0;line-height:0;"><img src="${ASSETS.values[3]}" width="48" height="48" alt="PRNA resilience value" style="display:block;border:0;width:48px;height:48px;"></td>
           </tr>
+          </table></td></tr>
         </table>
       </td>
-      <td width="310" style="width:310px;vertical-align:top;">
-        <p style="margin:0 0 2px 0;font-size:20px;line-height:24px;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</p>
-        <p style="margin:0 0 6px 0;font-size:11px;line-height:15px;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</p>
-        ${template === "christmas"
-          ? `<img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;width:260px;height:33px;min-width:260px;max-width:260px;">`
-          : `<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="290" style="background-color:#f9c126;height:2px;width:290px;font-size:0;line-height:0;">&nbsp;</td></tr></table>`}
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td height="${template === "christmas" ? "5" : "14"}" style="height:${template === "christmas" ? "5" : "14"}px;line-height:${template === "christmas" ? "5" : "14"}px;font-size:0;">&nbsp;</td></tr></table>
-        ${contactRows}
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td height="7" style="height:7px;line-height:7px;font-size:0;">&nbsp;</td></tr></table>
-        <table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-          ${ASSETS.social.map((item, index) => `<td width="${index < ASSETS.social.length - 1 ? "26" : "20"}" height="20" style="${index < ASSETS.social.length - 1 ? "padding-right:6px;" : ""}"><a href="${item.url}" target="_blank" style="text-decoration:none;"><img src="${item.icon}" width="20" height="20" alt="${item.name}" style="display:block;border:0;width:20px;height:20px;min-width:20px;max-width:20px;"></a></td>`).join("")}
-        </tr></table>
+      <td width="302" style="width:302px;vertical-align:top;padding:0;">
+        <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="302" style="width:302px;border-collapse:collapse;table-layout:fixed;font-family:Arial,sans-serif;">
+          <tr><td colspan="2" style="padding:0 0 2px 0;font-size:20px;line-height:24px;mso-line-height-rule:exactly;font-weight:bold;color:#32a34e;">${d.name || "Full name"}</td></tr>
+          <tr><td colspan="2" style="padding:0 0 6px 0;font-size:11px;line-height:15px;mso-line-height-rule:exactly;font-weight:bold;color:#333333;letter-spacing:2px;text-transform:uppercase;">${d.title || "Job title"}</td></tr>
+          ${template === "christmas"
+            ? `<tr><td colspan="2" style="padding:0 0 5px 0;font-size:0;line-height:0;"><img src="${ASSETS.christmasLights}" width="260" height="33" alt="Christmas lights" style="display:block;border:0;width:260px;height:33px;"></td></tr>`
+            : `<tr><td colspan="2" height="14" style="height:14px;padding:0;border-top:2px solid #f9c126;font-size:0;line-height:0;"></td></tr>`}
+          <tr height="27"><td width="26" height="27" style="width:26px;height:27px;padding:0;vertical-align:middle;font-size:0;line-height:0;"><img src="${ASSETS.address}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;"></td><td width="276" height="27" style="width:276px;height:27px;padding:0;vertical-align:middle;font-size:13px;line-height:18px;mso-line-height-rule:exactly;color:#333333;">${d.address || "Address"}</td></tr>
+          <tr height="27"><td width="26" height="27" style="width:26px;height:27px;padding:0;vertical-align:middle;font-size:0;line-height:0;"><img src="${ASSETS.phone}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;"></td><td width="276" height="27" style="width:276px;height:27px;padding:0;vertical-align:middle;font-size:13px;line-height:18px;mso-line-height-rule:exactly;"><a href="tel:${phoneHref}" style="color:#333333;text-decoration:none;">${d.phone || "Phone number"}</a></td></tr>
+          <tr height="27"><td width="26" height="27" style="width:26px;height:27px;padding:0;vertical-align:middle;font-size:0;line-height:0;"><img src="${ASSETS.email}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;"></td><td width="276" height="27" style="width:276px;height:27px;padding:0;vertical-align:middle;font-size:13px;line-height:18px;mso-line-height-rule:exactly;"><a href="mailto:${d.email}" style="color:#333333;text-decoration:none;">${d.email || "Email address"}</a></td></tr>
+          <tr height="27"><td width="26" height="27" style="width:26px;height:27px;padding:0;vertical-align:middle;font-size:0;line-height:0;"><img src="${ASSETS.website}" width="18" height="18" alt="" style="display:block;border:0;width:18px;height:18px;"></td><td width="276" height="27" style="width:276px;height:27px;padding:0;vertical-align:middle;font-size:13px;line-height:18px;mso-line-height-rule:exactly;"><a href="https://www.prna.com.au" style="color:#333333;text-decoration:none;">www.prna.com.au</a></td></tr>
+          <tr><td colspan="2" style="padding:7px 0 0 0;font-size:0;line-height:0;white-space:nowrap;">${ASSETS.social.map((item, index) => `<a href="${item.url}" target="_blank" style="display:inline-block;text-decoration:none;${index < ASSETS.social.length - 1 ? "margin-right:6px;" : ""}"><img src="${item.icon}" width="20" height="20" alt="${item.name}" style="display:inline-block;border:0;width:20px;height:20px;"></a>`).join("")}</td></tr>
+        </table>
       </td>
     </tr></table>
   </td></tr>`;
 
-  return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;width:480px;max-width:100%;">
+  return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" width="440" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;width:440px;border-collapse:collapse;table-layout:fixed;">
   ${signatureTop}
   ${template === "christmas" ? `<tr><td style="padding-bottom:12px;"><img src="${ASSETS.christmasBanner}" width="400" height="50" alt="Merry Christmas and Happy Holidays" style="display:block;border:0;width:400px;height:50px;min-width:400px;max-width:400px;"></td></tr>` : ""}
-  <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
+  <tr><td width="440" height="14" style="width:440px;height:14px;padding:0;border-top:1px solid #dddddd;font-size:0;line-height:0;"></td></tr>
   <tr><td align="left" style="padding:0 0 14px 0;text-align:left;"><img src="${ASSETS.sponsorBanner}" width="280" height="63" alt="Proudly sponsored by Village Motors" style="display:block;border:0;width:280px;height:63px;min-width:280px;max-width:280px;"></td></tr>
-  <tr><td width="440" style="border-top:1px solid #dddddd;font-size:0;line-height:0;height:14px;">&nbsp;</td></tr>
+  <tr><td width="440" height="14" style="width:440px;height:14px;padding:0;border-top:1px solid #dddddd;font-size:0;line-height:0;"></td></tr>
   <tr><td><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr>
-    <td width="100" height="35" style="vertical-align:middle;padding-right:10px;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;width:90px;height:35px;min-width:90px;max-width:90px;"></td>
-    <td style="vertical-align:middle;"><p style="margin:0;font-size:11px;line-height:1.4;color:#555555;max-width:300px;">We acknowledge the Traditional Custodians of the land on which we live, work and play. We pay our respects to Elders, past, present and emerging.</p></td>
+    <td width="100" height="35" style="width:100px;height:35px;vertical-align:middle;padding:0 10px 0 0;font-size:0;line-height:0;"><img src="${ASSETS.flags}" width="90" height="35" alt="Aboriginal and Torres Strait Islander flags" style="display:block;border:0;width:90px;height:35px;"></td>
+    <td width="340" style="width:340px;vertical-align:middle;padding:0;font-size:11px;line-height:15px;mso-line-height-rule:exactly;color:#555555;">We acknowledge the Traditional Custodians of the land on which we live, work and play. We pay our respects to Elders, past, present and emerging.</td>
   </tr></table></td></tr>
 </table>`;
 }
